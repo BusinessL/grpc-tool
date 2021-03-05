@@ -1,0 +1,21 @@
+{
+    "name": "yun-hai/grpc-tool",
+    "description": "grpc 工具包。",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yun Hai",
+            "email": "calmliqi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "google/protobuf": "v3.15.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grpc\\": "src"
+        }
+    }
+}
