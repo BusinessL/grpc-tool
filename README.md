@@ -8,3 +8,23 @@
 ```
 composer require yun-hai/grpc-tool
 ```
+
+使用
+
+> 单向流
+
+```
+$service = new Service($hostnames, $namespacePrefix);
+
+$result = $service->unaryCall($serviceName, $actionName, $request);
+
+```
+
+> 双向流
+
+```
+$service = new Service($hostnames, $namespacePrefix);
+
+$result = $grpc->bidirectionalGrpc($serviceName, $actionName, $request);
+
+```
