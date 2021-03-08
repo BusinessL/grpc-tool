@@ -17,10 +17,12 @@ trait Util
      * 设置初始变量
      *
      * @param string $serviceName
+     * @param string $actionName
      */
-    protected function setAttr($serviceName)
+    protected function setAttr($serviceName, $actionName)
     {
         $this->serviceName = $serviceName;
+        $this->actionName = $actionName;
     }
 
     /**
@@ -120,5 +122,38 @@ trait Util
         }
 
         return strtolower(preg_replace(['/([a-z\d])([A-Z])/', '/([^_])([A-Z][a-z])/'], '$1_$2', $arr));
+    }
+
+    /**
+     * 双向流
+     * @return mixed
+     */
+    protected function getCall()
+    {
+        $client = $this->getClient();
+
+        if (empty($this->calls[$this->serviceName . $this->actionName])) {
+            $action = $this->actionName;
+
+            $this->calls[$this->serviceName . $this->actionName] = $client->$action();
+        }
+
+        return $this->calls[$this->serviceName . $this->actionName];
+    }
+
+    /**
+     * 移除calls值
+     */
+    protected function removeCall()
+    {
+        /**
+         * @var AbstractCall $call
+         */
+        if ($this->calls[$this->serviceName . $this->actionName]) {
+            $call = $this->calls[$this->serviceName . $this->actionName];
+            $call->cancel();
+
+            $this->calls[$this->serviceName . $this->actionName] = null;
+        }
     }
 }
