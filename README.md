@@ -6,7 +6,7 @@
 
 安装
 ```
-composer require yun-hai/grpc-tool
+composer require yun-hai/grpc-tool dev-master
 ```
 
 使用
