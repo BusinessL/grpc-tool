@@ -1,9 +1,9 @@
 <?php
 
-namespace Grpc;
+namespace Gtool;
 
-use Grpc\lib\Util;
-use Grpc\exception\GrpcException;
+use Gtool\lib\Util;
+use Gtool\exception\GrpcException;
 
 /**
  * Class Service

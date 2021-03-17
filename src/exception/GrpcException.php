@@ -1,6 +1,6 @@
 <?php
 
-namespace Grpc\exception;
+namespace Gtool\exception;
 
 /**
  * Class GrpcException

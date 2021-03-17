@@ -1,15 +1,15 @@
 <?php
 
-namespace Grpc\lib;
+namespace Gtool\lib;
 
 use Google\Protobuf\Internal\Message;
 use Google\Protobuf\Internal\RepeatedField;
-use Grpc\exception\GrpcException;
+use Gtool\exception\GrpcException;
 
 /**
  * Trait Util
  *
- * @package Grpc\lib
+ * @package Gtool\lib
  */
 trait Util
 {
