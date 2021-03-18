@@ -121,7 +121,7 @@ trait Util
             }
         }
 
-        return strtolower(preg_replace(['/([a-z\d])([A-Z])/', '/([^_])([A-Z][a-z])/'], '$1_$2', $arr));
+        return $arr;
     }
 
     /**
